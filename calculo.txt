@@ -1,0 +1,26 @@
+<?php 
+
+  $check_peso = isset($_GET['peso']);
+  $check_Alt = isset($_GET['altura']);
+  $km_litroGas = $_GET['km_litroGas'];
+  $km_litroAlc = $_GET['km_litroAlc'];
+  $tempoViag = $_GET['tempoViag'];
+  $veloM = $_GET['veloM'];
+  $Valor_litroGas  = $_GET['Valor_litroGas'];
+  $Valor_litroAlc  = $_GET['Valor_litroAlc'];
+
+  echo '<h2>Informações do imc </h2><br>';
+  if($check_peso){
+      $pesoatual = $check_peso / $check_alt ;
+      $gastoTotalGas = $litrosUsadosGas * $Valor_litroGas;
+      echo 'Consumo gasolina: '.number_format($litrosUsadosGas,2,",",".").' litros<br>';
+      echo 'Valor Gasto gasolina: R$ '.number_format($gastoTotalGas,2,",",".").'<br>';
+  }  
+  if($check_Alc){
+      $litrosUsadosAlc = $distancia / $km_litroAlc ;
+      $gastoTotalAlc = $litrosUsadosAlc * $Valor_litroAlc;
+      echo 'Consumo alcool: '.number_format($litrosUsadosAlc,2,",",".").' litros<br>';
+
+  echo 'Valor Gasto alcool: R$ '. number_format($gastoTotalAlc,2,",",".");
+  }
+?>
